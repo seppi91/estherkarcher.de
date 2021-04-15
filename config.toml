@@ -1,4 +1,5 @@
 baseURL = "https://seppi91.github.io/estherkarcher.de/"
+canonifyurls = true # remove after custom domain
 languageCode = "en-us"
 title = "Esther Karcher | Architekturbüro in Karlsruhe Architekt"
 theme = "estherkarcher"
