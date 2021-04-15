@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="row">
+    <div class="container col-lg-8 col-sm-11">
+        {{ .Content }}
+    </div>
+    <div class="container col-lg-4 col-sm-11 d-flex justify-content-center">
+        
+        {{ with .Resources.GetMatch "images/me.jpg" }}
+        <div class="Image">
+            <img width="100%" src="{{ .RelPermalink }}">
+        </div>
+    {{ end }}
+    </div>
+</div>
+{{ end }}

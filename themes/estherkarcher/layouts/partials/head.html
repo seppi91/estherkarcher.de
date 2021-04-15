@@ -1,0 +1,15 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">
+    {{ $stylebootstrap := resources.Get "css/bootstrap.css" | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylebootstrap.RelPermalink }}" integrity="{{ $stylebootstrap.Data.Integrity }}">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Raleway:100,200,300,400,500,600,700,800,900,300italic,400italic|Open+Sans:100,200,300,400,500,600,700,800,900,300italic,400italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>

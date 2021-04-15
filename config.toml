@@ -1,0 +1,26 @@
+baseURL = "http://www.estherkarcher.de/"
+languageCode = "en-us"
+title = "Esther Karcher | Architekturbüro in Karlsruhe Architekt"
+theme = "estherkarcher"
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "Büro"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Projekte"
+    url = "/"
+    weight = 2
+  [[menu.main]]
+    name = "Kontakt"
+    url = "/contact/"
+    weight = 3
+
+[params]
+  author = "Esther Karcher"
+  description = "Esther Karcher, Architektin aus Karlsruhe: Funktionalität und Wirtschaftlichkeit sind die Basis für gute Architektur – jedoch nie deren alleiniges Ziel."
+  logo = "https://www.estherkarcher.de/wp-content/uploads/2017/11/logo2.png"
+
+[markup.goldmark.renderer]
+hardWraps = true

@@ -1,0 +1,5 @@
+
+{{ $bootstrap := resources.Get "js/bootstrap.js" }}
+{{ $fullscript := $bootstrap | minify | fingerprint "sha512" }}
+
+<script src="{{ $fullscript.RelPermalink }}" integrity="{{ $fullscript.Data.Integrity }}"></script>
