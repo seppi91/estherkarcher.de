@@ -11,7 +11,6 @@ a:hover {
 #content {
     color: dimgray;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 /* Navbar */ 
@@ -40,4 +39,50 @@ a:hover {
     font-size: smaller;
     font-style: italic;
     color: gray;
+}
+
+/* Image Gallery */
+
+/* Fade Effect */
+.img-fade-in {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Hover Effect */
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+    transition: transform 1s ease, filter 3s ease-in-out;
+    filter: brightness(100%);
+}
+  
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+    filter: brightness(120%);
 }

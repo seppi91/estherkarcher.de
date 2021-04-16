@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
+    <head>
+        {{ partial "site_head_meta.html" . }}
+        <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+        {{ partial "site_head_css.html" . }}
+        {{ partial "site_head_js.html" . }}
+        {{ block "extra_css" . }}{{ end }}
+    </head>
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
+        <div id="content" class="container col-sm-11 mx-auto">
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
     </body>
-    {{- partial "scripts.html" . -}}
+
+    {{ partial "site_bottom_js.html" . }}
+    {{ block "extra_js" . }}{{ end }}
 </html>

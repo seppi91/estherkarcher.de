@@ -1,0 +1,9 @@
+
+{{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">
+{{ $stylebootstrap := resources.Get "css/bootstrap.css" | minify | fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $stylebootstrap.RelPermalink }}" integrity="{{ $stylebootstrap.Data.Integrity }}">
+
+{{ range .Site.Params.Css.Head }}
+    <link href="{{ . }}" rel="stylesheet">
+{{ end }}

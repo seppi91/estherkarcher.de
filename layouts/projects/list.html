@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+{{ $page := .}}
+<section id="main">
+    <!--<h1 id="title">{{ .Title }}</h1>-->
+    <div class="row gy-sm-5 gy-lg-3">
+        {{ range .Pages }}
+        <div class="col-lg-3 col-xs-12 col-s-6 col-md-4">
+            <a href="{{ .RelPermalink }}">
+                {{ with index (.Resources.ByType "image") 0 }}
+                <div class="img-hover-zoom ">
+                    <img src="{{ .RelPermalink }}" class="img-fluid img-fade-in">
+                </div>
+            </a>
+            {{end}}
+            <div style="font-size: small;">
+                <span style="font-weight: bold; ">{{ .Title }}</span>
+                {{ with .Params.caption }}
+                <span style="font-weight: 300;">|</span>
+                <span> {{ . }}</span>
+                {{end}}
+            </div>
+
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{end}}
